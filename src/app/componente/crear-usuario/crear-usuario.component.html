@@ -1,1 +1,39 @@
-<p>crear-usuario works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+
+                <div class="mb-3">
+                    <label for="inputName" class="form-label">User Name</label>
+                    <input type="text" class="form-control" id="inputName" required [(ngModel)]="usuario.name" name="title" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">Enter your User Name.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="inputPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword" required [(ngModel)]="usuario.password">
+                </div>
+              
+                <button (click)="crearUsuario()" class="btn btn-primary">Submit</button>
+
+            </div>
+            <div class="card-fooder">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

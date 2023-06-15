@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/clase/usuario';
 import { UsuarioService } from 'src/app/servicio/usuario.service';
 
@@ -9,11 +10,22 @@ import { UsuarioService } from 'src/app/servicio/usuario.service';
 })
 export class ListarUsuarioComponent implements OnInit {
   listaUsuario: Usuario[] = []
+  usuario = new Usuario();
 
   constructor(private service: UsuarioService) { }
 
   ngOnInit(): void {
     this.getAllUsuario();
+  }
+
+  crearUsuario(): void {
+    this.service.createUsuario(this.usuario).subscribe({
+      next: (res) => {        
+        this.getAllUsuario();
+        //this.router.navigate(['listarUsuario']);
+      },
+      error: (e) => console.error(e)
+    });
   }
 
   getAllUsuario(): void {

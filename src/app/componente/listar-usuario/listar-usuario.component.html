@@ -1,5 +1,30 @@
 <p>listar-usuario works!</p>
 <i class="bi bi-star-fill text-success"></i>
+
+<div class="card">
+    <div class="card-header">
+
+    </div>
+    <div class="card-body">
+
+        <div class="mb-3">
+            <label for="inputName" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="inputName" required [(ngModel)]="usuario.name" name="title" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">Enter your User Name.</div>
+        </div>
+        <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword" required [(ngModel)]="usuario.password">
+        </div>
+      
+        <button (click)="crearUsuario()" class="btn btn-primary">Submit</button>
+
+    </div>
+    <div class="card-fooder">
+
+    </div>
+</div>
+
 <div class="card-body">
     <div class="panel-body">
         <table class="table table-hover table-sm">
